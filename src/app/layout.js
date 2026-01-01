@@ -20,6 +20,9 @@ export const metadata = {
   },
   description:
     "Professional nail salon in Anlaby Road, Hull offering BIAB, gel, nail extensions and artistic designs. Walk-ins welcome.",
+  icons: {
+    icon: [{ url: "/favicon.png", sizes: "48x48", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }) {
