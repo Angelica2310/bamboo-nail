@@ -46,6 +46,7 @@ export default function MenuPage() {
                 { href: "/about", label: "ABOUT US" },
                 { href: "/contact", label: "CONTACT" },
                 { href: "/policy", label: "POLICIES" },
+                { href: "/gallery", label: "GALLERY" },
               ].map((item) => (
                 <DropDownMenu.Item key={item.href} asChild>
                   <Link
