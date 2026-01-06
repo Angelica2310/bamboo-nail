@@ -1,17 +1,22 @@
 import Link from "next/link";
 
 export default function BookPage() {
-  const email = "bambooltd611@gmail.com";
   const phoneDisplay = "07926 607979";
   const phoneE164 = "+447926607979"; // UK mobile -> +44
   const whatsAppLink = `https://wa.me/447926607979`;
+  const FACEBOOK_PAGE = "BambooNailsSpaHull";
+  const INSTAGRAM_USER = "bamboo_nails_spa_hull";
 
-  const subject = encodeURIComponent("Booking Request - Bamboo Nails & Spa");
-  const body = encodeURIComponent(
-    `Hi Bamboo Nails & Spa,\n\nI would like to book an appointment.\n\nName:\nService:\nPreferred date(s):\nPreferred time(s):\nAny notes (design, removal, allergies):\n\nThank you!`
-  );
+  const messengerLink = `https://m.me/${FACEBOOK_PAGE}`;
+  const instagramDmLink = `https://ig.me/m/${INSTAGRAM_USER}`; // try this first
+  const instagramProfileLink = `https://www.instagram.com/${INSTAGRAM_USER}/`; // fallback
 
-  const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
+  // const subject = encodeURIComponent("Booking Request - Bamboo Nails & Spa");
+  // const body = encodeURIComponent(
+  //   `Hi Bamboo Nails & Spa,\n\nI would like to book an appointment.\n\nName:\nService:\nPreferred date(s):\nPreferred time(s):\nAny notes (design, removal, allergies):\n\nThank you!`
+  // );
+
+  // const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
 
   return (
     <main className="mx-auto max-w-7xl px-4 md:px-12 py-14 md:py-20">
@@ -24,13 +29,14 @@ export default function BookPage() {
           Book your visit
         </h1>
         <p className="mt-5 text-sm md:text-base leading-relaxed text-(--text-main)/65">
-          To book an appointment, contact us by email, phone, or WhatsApp. We’ll
-          confirm availability and reply as soon as possible.
+          To book an appointment, contact us by sending us a message on our
+          Facebook page, Instagram page, phone, or WhatsApp. We’ll confirm
+          availability and reply as soon as possible.
         </p>
       </div>
 
       {/* Booking options */}
-      <section className="mt-12 grid gap-6 md:grid-cols-2">
+      <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {/* Phone */}
         <div className="rounded-3xl bg-white/60 p-7 shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
           <h2 className="text-sm tracking-widest text-(--primary)">PHONE</h2>
@@ -41,23 +47,19 @@ export default function BookPage() {
           <a
             href={`tel:${phoneE164}`}
             className="
-              mt-6 inline-flex w-full items-center justify-center
-              rounded-lg
-              border border-(--accent)
-              bg-white/40
-              px-5 py-3
-              text-xs tracking-widest
-              text-(--textMain)
-              hover:bg-(--accent)
-              transition
-            "
+        mt-6 inline-flex w-full items-center justify-center
+        rounded-lg
+        border border-(--accent)
+        bg-white/40
+        px-5 py-3
+        text-xs tracking-widest
+        text-(--textMain)
+        hover:bg-(--accent)
+        transition
+      "
           >
             CALL {phoneDisplay}
           </a>
-
-          <p className="mt-4 text-xs tracking-widest text-(--text-main)/55">
-            {phoneDisplay}
-          </p>
         </div>
 
         {/* WhatsApp */}
@@ -73,23 +75,88 @@ export default function BookPage() {
             target="_blank"
             rel="noopener"
             className="
-              mt-6 inline-flex w-full items-center justify-center
-              rounded-lg
-              border border-(--primary)
-              bg-(--primary)/10
-              px-5 py-3
-              text-xs tracking-widest
-              text-(--primary)
-              hover:bg-(--primary)
-              hover:text-white
-              transition
-            "
+        mt-6 inline-flex w-full items-center justify-center
+        rounded-lg
+        border border-(--primary)
+        bg-(--primary)/10
+        px-5 py-3
+        text-xs tracking-widest
+        text-(--primary)
+        hover:bg-(--primary)
+        hover:text-white
+        transition
+      "
           >
             MESSAGE ON WHATSAPP
           </a>
+        </div>
 
-          <p className="mt-4 text-xs tracking-widest text-(--text-main)/55">
-            {phoneDisplay}
+        {/* Facebook Messenger */}
+        <div className="rounded-3xl bg-white/60 p-7 shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
+          <h2 className="text-sm tracking-widest text-(--primary)">FACEBOOK</h2>
+          <p className="mt-3 text-sm text-(--text-main)/70">
+            Message us on Facebook for availability, prices, or booking help.
+          </p>
+
+          <a
+            href={messengerLink}
+            target="_blank"
+            rel="noopener"
+            className="
+        mt-6 inline-flex w-full items-center justify-center
+        rounded-lg
+        border border-(--accent)
+        bg-white/40
+        px-5 py-3
+        text-xs tracking-widest
+        text-(--textMain)
+        hover:bg-(--accent)
+        transition
+      "
+          >
+            MESSAGE ON MESSENGER
+          </a>
+        </div>
+
+        {/* Instagram */}
+        <div className="rounded-3xl bg-white/60 p-7 shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
+          <h2 className="text-sm tracking-widest text-(--primary)">
+            INSTAGRAM
+          </h2>
+          <p className="mt-3 text-sm text-(--text-main)/70">
+            Send us a DM on Instagram — feel free to include inspiration photos.
+          </p>
+
+          <a
+            href={instagramDmLink} // if this is flaky, change to instagramProfileLink
+            target="_blank"
+            rel="noopener"
+            className="
+        mt-6 inline-flex w-full items-center justify-center
+        rounded-lg
+        border border-(--accent)
+        bg-white/40
+        px-5 py-3
+        text-xs tracking-widest
+        text-(--textMain)
+        hover:bg-(--accent)
+        transition
+      "
+          >
+            MESSAGE ON INSTAGRAM
+          </a>
+
+          <p className="mt-4 text-[11px] text-(--text-main)/55">
+            If DM doesn’t open, use our{" "}
+            <a
+              href={instagramProfileLink}
+              target="_blank"
+              rel="noopener"
+              className="underline underline-offset-4 hover:text-(--primary)"
+            >
+              Instagram profile
+            </a>
+            .
           </p>
         </div>
       </section>
