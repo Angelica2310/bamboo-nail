@@ -57,6 +57,9 @@ export default function NavBar() {
             <Link href="/policy" variant="homeNav">
               POLICIES
             </Link>
+            <Link href="/gallery" variant="homeNav">
+              GALLERY
+            </Link>
           </div>
         </div>
 

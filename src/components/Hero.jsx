@@ -32,7 +32,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/services"
+              href="/gallery"
               className="
     text-xs md:text-sm
     tracking-widest
@@ -45,7 +45,7 @@ export default function Hero() {
     hover:after:w-full
   "
             >
-              CHECK OUR SERVICES
+              OUR GALLERY
             </Link>
           </div>
 
@@ -54,7 +54,7 @@ export default function Hero() {
             {["/hero01.jpg", "/hero02.jpg", "/hero03.jpg"].map((src) => (
               <div
                 key={src}
-                className="relative h-20 w-20 md:h-50 md:w-50 overflow-hidden rounded-t-full shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+                className="relative h-30 w-30 md:h-50 md:w-50 overflow-hidden rounded-t-full shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
               >
                 <Image
                   src={src}
