@@ -30,35 +30,7 @@ export default function BookPage() {
       </div>
 
       {/* Booking options */}
-      <section className="mt-12 grid gap-6 md:grid-cols-3">
-        {/* Email */}
-        <div className="rounded-3xl bg-white/60 p-7 shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
-          <h2 className="text-sm tracking-widest text-(--primary)">EMAIL</h2>
-          <p className="mt-3 text-sm text-(--text-main)/70">
-            Best for sending inspiration photos and detailed requests.
-          </p>
-
-          <a
-            href={mailto}
-            className="
-              mt-6 inline-flex w-full items-center justify-center
-              rounded-lg
-              bg-(--primary)
-              px-5 py-3
-              text-xs tracking-widest
-              text-white
-              hover:bg-(--primary)/90
-              transition
-            "
-          >
-            EMAIL TO BOOK
-          </a>
-
-          <p className="mt-4 text-xs tracking-widest text-(--text-main)/55 break-all">
-            {email}
-          </p>
-        </div>
-
+      <section className="mt-12 grid gap-6 md:grid-cols-2">
         {/* Phone */}
         <div className="rounded-3xl bg-white/60 p-7 shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
           <h2 className="text-sm tracking-widest text-(--primary)">PHONE</h2>
